@@ -1,0 +1,98 @@
+<!doctype html>
+<html >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Ótima Selecione o produto</title>
+  <meta name="description" content="">
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+
+
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="">
+
+ <div id="produtos">
+   <div class="navigationbar">
+
+     <div class="wrapper clearfix">
+
+       <img src="assets/img/logo144x144.png" width="72" />
+       <ul class="top_menu left">         
+         <li ><a href="produtos.html">Produtos</a></li>
+         <li ><span>></span></li>
+         <li ><a href="produtos_tipos.html">Tipos</a></li>         
+         <li ><span>></span></li>
+         <li ><a href="produtos_tipos_modelos.html">Modelos</a></li>
+         
+       </ul>
+       <ul class="top_menu right">         
+         
+         <li class="cancel"><a href="javascript:removeOrcamento(true)">Cancelar orçamento</a></li>
+       </ul>
+     </div>
+   </div>
+   <div class="wrapper">
+     <h1>Selecione a disposição</h1>
+   </div>
+   <div class="box">
+     <div class="wrapper">
+
+       <div class="scroller clearfix">
+         <ul>
+          
+         </ul>
+       </div>
+     </div>
+   </div>
+   </div>
+   <div class="whitebox"></div>
+   <script type="text/javascript" src="cordova.js"></script>
+   <script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+   <script src="plugins/spin.min.js"></script>
+
+   <script src="js/funcoes.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/orcamento.js"></script>
+   <script src="js/produtos.js"></script>
+   <script type="text/javascript">
+
+    document.addEventListener("deviceready", function (){
+
+      showLoading();
+      window.requestFileSystem(window.LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+       target_directory = fileSystem.root.nativeURL; 
+      loga(target_directory);
+      
+      
+      loadOrcamento();
+
+
+    
+      
+
+    }, function(e){
+      alert('erro fileSystem')
+    });
+
+
+  }, false);
+
+function orcamentoLoaded(){
+  $('h1').text(ORCAMENTO.produto_nome+' > '+ORCAMENTO.produto_tipo_nome+' > '+ORCAMENTO.produto_tipo_modelo_nome+' > '+ORCAMENTO.produto_tipo_modelo_cor_nome+' > selecione a disposição');
+  carregaProdutosTiposModelosDisposicoes(ORCAMENTO.produto_tipo_modelo_id);
+}
+
+
+
+</script>
+
+</body>
+</html>

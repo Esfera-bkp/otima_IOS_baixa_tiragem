@@ -1,0 +1,399 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Interna Ótima</title>
+  <meta name="description" content="">
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,  target-densitydpi=device-dpi" />
+
+
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body >
+
+ <div id="interna">
+  <div class="navigationbar">
+
+   <div class="wrapper clearfix">
+
+     <img src="assets/img/logo144x144.png" width="72" />
+     <ul class="top_menu left">         
+       <li ><a href="produtos.html">Produtos</a></li>
+       <li ><span>></span></li>
+       <li ><a href="produtos_tipos.html">Tipos</a></li>
+       <li ><span>></span></li>
+       <li ><a href="produtos_tipos_modelos.html">Modelos</a></li>
+
+     </ul>
+     <ul class="top_menu right">         
+
+       <li class="cancel"><a href="javascript:removeOrcamento(true)">Cancelar orçamento</a></li>
+     </ul>
+   </div>
+ </div>
+ <div class="wrapper">
+   <h1>Papertalk > Customização simples > MINI > Vermelho</h1>
+   <div class="compartimentos_list clearfix">
+    <!--  <div id="compartimento'+item.id+'" data-compartimento="'+item.id+'" class="compar detalhes" >
+              <div class="topo">Berço esquerda <div class="add"><select><option>123 asda sdasd asdasdasd asdasd</option><option>asda sdasdasd asdasd</option></select> </div></div>
+              <div class="itens">
+                <div href="#" class="item active">Caneta DEMA
+                <div class="compartimento_modelo_cor">Selecione a cor<select onblur="selecionaModeloCor('+item.compartimento_id+','+opcao.produto_modelo_id+')" id="'+item.compartimento_id+'_opcoes_'+opcao.produto_modelo_id+'" class="select_opcoes"><option>asdasdasd</option></select></div>
+              </div>
+                <a href="#" class="item">Paper talk listrado</a>
+              </div>
+          </div> 
+          <div id="compartimento'+item.id+'" data-compartimento="'+item.id+'" class="compar detalhes" >
+              <div class="topo">Berço esquerda <div class="add"><select><option>123 asda sdasd asdasdasd asdasd</option><option>asda sdasdasd asdasd</option></select> </div></div>
+              <div class="itens">
+                <a href="#" class="item">Caneta DEMA</a>
+                <a href="#" class="item">Paper talk listrado</a>
+              </div>
+          </div>  -->
+   </div>
+ </div>
+ <br>
+ <br>
+
+ <div class="tabs">
+   <ul class="tab-nav clearfix">
+    <li class="active"> <a href="#pag1">Customizações</a></li>
+    <li><a href="#pag2">Embalagem</a></li>
+    <li id="tab_pag3"><a href="#pag3" >Proposta</a></li>            
+  </ul>
+  <a href="javascript:preVisualizar();" class="btn azul previsu">Pré-visualizar</a>
+  <div class="contents">
+    <div class="formulario active tab-content" id="pag1">
+     <div class="wrapper">
+
+     </div>
+   </div> 
+   <div class="formulario  tab-content" id="pag2">
+     <div class="wrapper">
+
+
+
+     </div>
+   </div>
+   <div class="formulario  tab-content" id="pag3">
+     <div class="wrapper" style="padding-bottom: 300px;">
+
+      <div id="estado" class="linha">
+        <label class="label" for="inputestado">Venda para o estado:</label>
+        <select class="big" id="inputestado"  name="inputestado">
+          <option value="">Selecione</option>
+
+        </select>
+
+      </div>
+      <div id="frete" class="linha">
+        <label class="label" for="inputfrete">Frete:</label>
+        <select class="big" id="inputfrete"  name="inputfrete">
+          <option value="">Selecione</option>
+
+        </select>
+
+      </div> 
+      <div id="condicao" class="linha">
+        <label class="label" for="inputcondicao">Condição de pagamento:</label>
+        <select class="big" id="inputcondicao"  name="inputcondicao">
+          <option value="">Selecione</option>
+
+        </select>
+
+      </div>
+      <div id="agencia" class="linha">
+        <label class="label" for="inputagencia">Comissão de Agência:</label>
+        <select class="big" id="inputagencia"  name="inputagencia">
+          <option value="0"  data-rel="0">Selecione</option>
+
+        </select>
+
+      </div>
+     
+    <div class="linha clearfix">
+      <a href="javascript:calculaValores();"  id="calcula" class="btn " >Calcular valores</a>
+
+    </div>
+      <div class="linha clearfix">
+       <table class="tabela" id="tabelaValores" cellpadding=0 cellspacing=0>
+        <thead>
+          <tr>
+
+            <th width="50%">Tiragem</th>
+            <th width="50%">Unitário</th>
+            <th width="50%" nowrap="nowrap" >Valor total</th>
+            <th width="50%" nowrap="nowrap" >Incluir na proposta</th>            
+          </tr>
+        </thead>
+        <tbody class="the_tbody">
+         <!--  <tr id="tiragem_'+item.tiragem_id+'" class="tiragemlinha" data-rel="'+item.tiragem_id+'">
+              <td class="qtde">item.nome <a href="javascript:;" data-tiragem="1" class="veritens" >Ver Itens</a> 
+                <div class="discriminacao">
+                  <table>
+                    <tr>
+                      <td>nome do produto</td>
+                      <td>valor</td>
+                    </tr>
+                    <tr>
+                      <td>nome do produto</td>
+                      <td>valor</td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td class="valor"></td>
+              <td class="total"></td>
+              <td>
+              <div class="checkbtn">
+               <input type="checkbox" name="tiragem[]" class="checks" value="item.tiragem_id+'" id="checktiragemitem.tiragem_id+'" />
+               <label for="checktiragemitem.tiragem_id+'"></label>
+              </div>             
+              </td>
+              </tr> -->
+        </tbody>
+        <!-- <tfoot>
+          <tr>
+          <td ></td>
+          <td  colspan=1 >Total das Mercadorias (R$)</td> 
+          <td colspan=1 class="val" align="center" id="total_mercadorias" ></td>
+          </tr>
+          <tr>
+          <td ></td>
+          <td  colspan=1 >Total de IPI (R$)</td> <td colspan=1 class="val" align="center"id="total_ipi" ></td></tr>
+          <tr>
+          <td ></td>
+          <td  colspan=1 >Total das mercadorias + IPI (R$)</td> <td colspan=1 class="val" align="center" id="total_mercadorias_ipi" ></td></tr>
+          <tr>
+          <td ></td>
+          <td  colspan=1 >Frete (R$)</td> <td colspan=1 class="val" align="center" id="total_frete"></td></tr>
+          
+          <tr>
+          <td ></td>
+          <td  colspan=1 >Total a pagar(R$)</td> <td colspan=1 class="val" align="center" id="total_pagar"></td></tr>
+        </tfoot> -->
+      </table>
+
+    </div>
+     <div id="" class="linha">
+        <h2>Dados do cliente</h2>
+      </div>
+      <div id="" class="linha">
+        <label class="label" for="nomecliente">Nome do cliente:</label>
+        <input type="text" id="nomecliente" value="">
+      </div><div id="" class="linha">
+        <label class="label" for="contatocliente">Contato:</label>
+        <input type="text" id="contatocliente" value="">
+      </div>
+      <div id="" class="linha">
+        <label class="label" for="emailcliente">Email do cliente:</label>
+        <input type="email" id="emailcliente" value="">
+      </div>
+      <div id="" class="linha">
+        <label class="label" for="telefonecliente">Telefone do cliente:</label>
+        <input type="text" id="telefonecliente" value="">
+      </div>
+      <div id="" class="linha">
+        <label class="label" for="prazoembarque">Prazo de embarque:</label>
+        <input type="text" id="prazoembarque" value="até 15 dias úteis após aprovação final do virtual e/ou amostras físicas">
+      </div>
+      <div id="" class="linha">
+        <label class="label" for="validade">Validade da proposta:</label>
+        <input type="text" id="validade" value="15 dias úteis">
+      </div>
+      <div id="" class="linha" style="">
+        <label class="label" for="observacao">Observação:</label>
+        <input type="text" id="observacao" value="">
+
+      </div>
+    <div class="linha clearfix">
+      <button type="submit" onclick="javascript:enviaProposta();"  id="send" class="btn azul" >Enviar proposta</button>
+
+      <div id="comissao">
+        <select class="big" id="inputcomissao"  name="inputcomissao">
+          
+
+        </select>
+      </div>
+      <div id="comissaokit" style="display: none;">
+        <a href="javascript:;" class="" onclick="toggleDesconto()"></a>
+        <ul style="display: none;">
+         <!--  <li>
+            PAPER TALK BLA BLA BLA
+            <select  id="inputcomissaokit"  name="inputcomissaokit">
+              
+  <option>1</option>
+            </select>
+          </li>
+          <li>
+            PAPER TALK BLA BLA BLA
+            <select  id="inputcomissaokit"  name="inputcomissaokit">
+  <option>2</option>
+              
+
+            </select>
+          </li>
+          <li>
+            PAPER TALK BLA BLA BLA
+            <select  id="inputcomissaokit"  name="inputcomissaokit">
+  <option>3</option>
+              
+
+            </select>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+<div class="whitebox"></div>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="plugins/spin.min.js"></script>
+
+<script src="js/funcoes.js"></script>
+<script src="js/main.js"></script>
+<script src="js/orcamento.js"></script>
+<script src="js/produtos.js"></script>
+<script src="js/proposta.js"></script>
+<script type="text/javascript">
+
+  document.addEventListener("deviceready", function (){
+
+    showLoading();
+    window.requestFileSystem(window.LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+     target_directory = fileSystem.root.nativeURL; 
+     loga(target_directory);
+
+
+     loadOrcamento();
+
+
+
+
+
+   }, function(e){
+    alert('erro fileSystem')
+  });
+
+
+  }, false);
+
+function toggleDesconto(){
+  $('#comissaokit ul').toggle();
+}
+
+var isSubproduto = false;
+  function orcamentoLoaded(){
+
+    // $('#enviaProposta').click();
+    if(ORCAMENTO.compartimentos.length>0){
+      $('.tabs .tab-nav li').hide();
+      $('.tabs .tab-nav li .active').removeClass('active');
+      $('.tabs .tab-nav li#tab_pag3').show();
+      $('.tabs .tab-nav li#tab_pag3').addClass('active');
+      $('.formulario.active').removeClass('active');
+      $('#pag3').addClass('active');
+    //   $('.top_menu.left').append($('<li ><span>></span></li>'));
+    //   $('.top_menu.left').append($('<li ><a href="produtos_tipos_modelos_compartimentos.html">Compartimentos</a></li>'));
+    //   $('h1').text(ORCAMENTO.produto_nome+' > '+ORCAMENTO.produto_tipo_nome+' > '+ORCAMENTO.produto_tipo_modelo_nome+' > '+ORCAMENTO.produto_tipo_modelo_cor_nome);    
+    //   for( var x = 0 ; x < ORCAMENTO.compartimentos.length ; x++){
+    //     var item = ORCAMENTO.compartimentos[x];
+    //     var strhtml="";
+    //     strhtml+= '<div id="compartimento'+item.compartimento_id+'" data-compartimento="'+item.compartimento_id+'" data-compartimento_nome="'+item.compartimento_nome+'"  class="compar detalhes" >';
+    //               strhtml+= '<div class="topo">'+item.compartimento_nome+' </div>';
+    //               strhtml+= '<div class="itens">';
+    //               for( var i = 0 ; i < item.opcoes.length ; i++){
+    //                 var opcao = item.opcoes[i];
+    //                 strhtml+= '<div class="item" data-compartimento="'+item.compartimento_id+'"  data-modelo_id="'+opcao.produto_modelo_id+'" data-modelo_nome="'+opcao.produto_modelo_nome+'">'+opcao.produto_modelo_nome+'<div class="compartimento_modelo_cor"><span>Selecione a cor</span><select onblur="selecionaModeloCor('+item.compartimento_id+','+opcao.produto_modelo_id+')" id="'+item.compartimento_id+'_opcoes_'+opcao.produto_modelo_id+'" class="select_opcoes"></select></div></div>';
+    //               }
+                   
+    //               strhtml+= '</div>';
+    //               strhtml+= '</div>';
+        
+    //     $('.compartimentos_list').append($(strhtml));
+        
+    //   }
+    //     $('.compar').each(function(){
+    //       var compartimento = $(this).data('compartimento');
+    //       $(this).find('.itens .item').each(function(){
+    //         carregaProdutosTiposModelosCompartimentosCores(compartimento,$(this).data('modelo_id'));            
+    //       });
+    //     });
+    //     $('.compar .itens .item').click(function(){
+    //       $('.compar .itens .item.active').removeClass('active');
+    //       $(this).addClass('active');
+    //       carregaProdutosTiposModelosCompartimentosCustomizacoes($(this).data('modelo_id'));    
+    //     });
+    //     $('.whitebox').css('top','470px');
+    }else 
+    if(ORCAMENTO.produto_tipo_modelo_qtde_subprodutos>0){
+      $('.top_menu.left').append($('<li ><span>></span></li>'));
+      $('.top_menu.left').append($('<li ><a href="produtos_tipos_modelos_disposicao.html">Disposição</a></li>'));
+      var select = '<select class="big" id="subprodutos" onchange="trocaDisposicao()"  name="subprodutos">';
+      select += '<option value="'+ORCAMENTO.produto_tipo_modelo_id+'">'+ORCAMENTO.produto_nome+' > '+ORCAMENTO.produto_tipo_nome+' > '+ORCAMENTO.produto_tipo_modelo_nome+' > '+ORCAMENTO.produto_tipo_modelo_cor_nome+'</option>';
+      select += '</select>';
+      $('h1').before($(select));    
+      $('h1').remove();    
+
+      loadSubprodutos(ORCAMENTO.produto_tipo_modelo_id,ORCAMENTO.produto_tipo_modelo_disposicao);
+    }else{
+      $('h1').text(ORCAMENTO.produto_nome+' > '+ORCAMENTO.produto_tipo_nome+' > '+ORCAMENTO.produto_tipo_modelo_nome+' > '+ORCAMENTO.produto_tipo_modelo_cor_nome);    
+    }
+    carregaProdutosTiposModelosCustomizacoes(ORCAMENTO.produto_tipo_modelo_id);
+    carregaProdutosTiposModelosEmbalagens(ORCAMENTO.produto_tipo_modelo_id);
+    carregaEstados();
+    carregaFretes();
+    carregaAgencias();
+    carregaCondicoes();
+    carregaComissoes();
+    
+  }
+  
+  function trocaDisposicao(){
+    $('#pag1 .wrapper').html('');
+    var modelo_id = $('#subprodutos').val();
+
+    if ($('#cor_subproduto').length>0) {
+      $('#cor_subproduto').remove();
+    }
+
+    isSubproduto = false
+    if (modelo_id==-1) {
+    //carrega canetas
+    carregaProdutosTiposModelosCanetas(ORCAMENTO.produto_tipo_modelo_id);  
+  }else{
+    isSubproduto = true;
+    carregaProdutosTiposModelosCustomizacoes(modelo_id);    
+    carregaProdutosTiposModelosCores(modelo_id);    
+  }
+}
+
+
+
+</script>
+<!-- <tr>
+            <td>1000</td>
+            <td>R$ 50,00</td>
+            <td>
+            <div class="checkbtn">
+               <input type="checkbox" name="tiragem[]" value="1" id="tiragem1" />
+              <label for="tiragem1"></label>
+            </div>
+            
+            </td>
+          </tr> -->
+</body>
+</html>

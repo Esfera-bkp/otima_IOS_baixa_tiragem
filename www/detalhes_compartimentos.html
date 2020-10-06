@@ -1,0 +1,162 @@
+<!doctype html>
+<html >
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Ótima Selecione o produto</title>
+  <meta name="description" content="">
+
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+
+
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="">
+
+ <div id="produtos">
+   <div class="navigationbar">
+
+     <div class="wrapper clearfix">
+
+       <img src="assets/img/logo144x144.png" width="72" />
+       <ul class="top_menu left">         
+         <li ><a href="javascript:removeOrcamento(true)">Produtos</a></li>
+         <li ><span>></span></li>
+         <li ><a href="javascript:removeOrcamento(true)">Tipos</a></li>         
+         <li ><span>></span></li>
+         <li ><a href="javascript:removeOrcamento(true)">Modelos</a></li>
+         <li ><span>></span></li>
+         <li ><a href="produtos_tipos_modelos_compartimentos.html">Compartimentos</a></li>
+         
+       </ul>
+       <ul class="top_menu right">         
+
+         <li class="cancel"><a href="javascript:removeOrcamento(true)">Cancelar orçamento</a></li>
+         <li class="confirm"><a href="javascript:redireciona('detalhes.html');">Proposta</a></li>
+       </ul>
+     </div>
+   </div>
+   <div class="wrapper">
+     <h1>Selecione a disposição</h1>
+   </div>
+   <div class="box">
+     <div class="wrapper">
+      <div class="itens_customizacao">
+        <div class="topo"> 
+          <h2 class="subtitulo">Customizar</h2>
+          <!-- <a href="#" class="preview">Pré-visualizar</a> -->
+        </div>
+        <div class="linha clearfix"> 
+          <div class="uminteiro">
+            <a href="javascript:;" class="item_pai customizable" data-tipo="main">Caixa Premium(kits)</a>
+          </div>
+        </div> 
+        <div class="linha clearfix " id="the_compartimentos"> 
+         <!--  <div class="ummeio">
+            <div id="compartimento'+item.id+'" data-compartimento="'+item.id+'" class="compar" >
+              <div class="topo">Berço esquerda </div>
+              <div class="itens">
+                <a href="#" class="item">Caneta DEMA</a>
+                <a href="#" class="item">Paper talk listrado</a>
+              </div>
+            </div>
+          </div> 
+          <div class="ummeio">
+            <div id="compartimento'+item.id+'" data-compartimento="'+item.id+'" class="compar" >
+              <div class="topo">Berço esquerda </div>
+              <div class="itens">
+                <a href="#" class="item">Caneta DEMA</a>
+                <a href="#" class="item">Paper talk listrado</a>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="customizador">
+        <span id="info_no" class="info">Selecione ao lado o item<br> a ser customizado</span>
+        <div class="edit_fields" id="edit_fields" style="display: none;">
+
+          <div class="header">
+            <label>Customizando:</label>
+            <h4>Caneta montadas - Cores - DEMA - Padrões</h4>          
+          </div>
+          <div class="campos">
+          <!--  <div id="frete" class="linha">
+            <label class="label" for="inputfrete">Frete:</label>
+            <select class="big" id="inputfrete"  name="inputfrete">
+              <option value="">Selecione</option>
+
+            </select>
+
+          </div> 
+          <div id="frete" class="linha">
+            <label class="label" for="inputfrete">Frete:</label>
+            <select class="big" id="inputfrete"  name="inputfrete">
+              <option value="">Selecione</option>
+
+            </select>
+
+          </div>  -->
+        </div>
+
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+</div>
+<div class="whitebox"></div>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="assets/js/vendor/jquery-1.11.3.min.js"></script>
+<script src="plugins/spin.min.js"></script>
+
+<script src="js/funcoes.js"></script>
+<script src="js/main.js"></script>
+<script src="js/orcamento.js"></script>
+<script src="js/produtos.js"></script>
+<script type="text/javascript">
+
+document.addEventListener("deviceready", function (){
+
+  showLoading();
+  window.requestFileSystem(window.LocalFileSystem.PERSISTENT, 0, function(fileSystem){
+   target_directory = fileSystem.root.nativeURL; 
+   loga(target_directory);
+
+
+   loadOrcamento();
+
+
+
+
+
+ }, function(e){
+  alert('erro fileSystem')
+});
+
+
+}, false);
+
+function orcamentoLoaded(){
+  console.log('================orcamentoLoaded');
+  $('h1').text(ORCAMENTO.produto_nome+' > '+ORCAMENTO.produto_tipo_nome+' > '+ORCAMENTO.produto_tipo_modelo_nome+' > '+ORCAMENTO.produto_tipo_modelo_cor_nome);  
+  $('.item_pai').text(ORCAMENTO.produto_tipo_modelo_nome+' > '+ORCAMENTO.produto_tipo_modelo_cor_nome);
+  $('.item_pai').data('modelo_id',ORCAMENTO.produto_modelo_id);
+
+  carregaCompartimentos();
+}
+
+
+
+</script>
+
+</body>
+</html>
